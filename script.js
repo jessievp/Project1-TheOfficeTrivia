@@ -1,5 +1,3 @@
-
-
 const startBtn = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 // const prevButton = document.getElementById('prev-btn')
@@ -56,7 +54,7 @@ nextButton.addEventListener('click', () => {
 		console.log('Started')
 //		below elements will hide when start button is initiated
 		startBtn.classList.add('hide')
-		
+
 		welcomePrompt.classList.add('hide')
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -69,7 +67,7 @@ nextButton.addEventListener('click', () => {
 
 //		previousQuestionIndex = 0
 //		questionContainerElement.classList.remove('hide')
-		
+
 		questionCounter++ 
 		progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
 }
@@ -89,10 +87,10 @@ nextButton.addEventListener('click', () => {
 
 //	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 //		return "game is over!";
-	
+
 	questionCounter++
 	progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
-		
+
  }
 
 //  function previousQuestion () {
@@ -105,7 +103,7 @@ function showQuestion(question) {
 		const button = document.createElement('button')
 			button.innerText = answer.text
 			button.classList.add('btn')
-				
+
 	if (answer.correct) {
 		button.dataset.correct = answer.correct 
 	//	playerScore += 1;
@@ -113,7 +111,7 @@ function showQuestion(question) {
 		button.addEventListener('click', selectAnswer)
 		answerButtonsElement.appendChild(button)
 		// progressBar.innerText = `Question ${currentQuestionIndex} / ${MAX_QUESTIONS}`;
-		
+
 	})
 
 }
@@ -143,29 +141,29 @@ function selectAnswer (event) {
 	setStatusClass(document.getElementById('answer-status'), correct)
 	Array.from(answerButtonsElement.children).forEach(button => {
 		setStatusClass(button, button.dataset.correct)
-	
+
 	})
 
 	 if (shuffledQuestions.length > currentQuestionIndex +1) {
 	 	nextButton.classList.remove('hide')
-		 	 	
-	 
+
+
 	} else {
 	 	/*startBtn.innerHTML = `<strong> PLAY AGAIN </strong>` */
-	
+
 		reStart.classList.remove('hide')
 		finishPlay.classList.remove('hide')
 		finishPlay.innerHTML  = `<strong> You got a score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
 		questionContainerElement.classList.add('hide')	
-		
+
 	 }	
 
 	 if (correct) {
-	
+
 		countRightAnswers++
-		scoreText.innerHTML  = `Score:` + `${countRightAnswers}`;
+		scoreText.innerHTML  = `Score: ` + `${countRightAnswers}`;
 		answerButtonsElement.classList.add('no-click');
-	 
+
 	}
 
 //	if (scoreText > 1) {
@@ -180,7 +178,7 @@ function selectAnswer (event) {
 
 
 function restartGame () {
-		
+
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
 	//	currentQuestionIndex = 0
@@ -193,12 +191,12 @@ function restartGame () {
 
 //		previousQuestionIndex = 0
 //		questionContainerElement.classList.remove('hide')
-		
+
 		questionCounter++ 
 		progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
-		
-		
-		
+
+
+
 }
 
 
@@ -206,10 +204,10 @@ function setStatusClass (element, correct) {
 	clearStatusClass(element)
 	if (correct) {
 		element.classList.add('correct') 
-		
+
 	} else {
 		element.classList.add('wrong')
-		
+
 	}
 }
 

@@ -24,7 +24,7 @@ body {
 
 
 body {
-  background-image: url('/zimages/windows98bg.png');
+  background-image: url("https://i.imgur.com/eKesLel.png");
   background-size: 100% calc(100%);
   height: 100vh;
   margin: 0;
@@ -34,7 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
-  
+
 }
 
 h1 {
@@ -43,7 +43,7 @@ h1 {
 
 
 .container {
-	
+
 	width: 620px;
 	height:350px;
   background:#C0C0C0;
@@ -141,6 +141,8 @@ button:hover {
 	text-align: center;
 	padding-left: 3px;
 	padding-right: 3px;
+	font-size: 16px;
+	font-family: Tahoma;
 }
 
 #start-btn {
@@ -211,7 +213,7 @@ div#header {
 	background:#000080;
 	padding-top: 19px;
 	margin-top: 2px;
-	
+
 
 }
 
@@ -231,5 +233,22 @@ div#header {
 #smallButton {
 	font-weight: bold;
 	padding-top: 2px;
+	
 }
 
+.welcomeText {
+
+	font-size:20px;
+  font-weight:bold;
+  font-family:Tahoma;
+  text-align: center;
+}
+
+#scoreText {
+	padding-left: 8px;
+	padding-top: 5px;
+}
+
+#bye {
+	padding-top: 80px;
+}
