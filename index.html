@@ -1,0 +1,75 @@
+d<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+
+	<!-- setting viewport to make page viewable on most devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Trivia Page </title>
+	<link rel="stylesheet" href="style.css"></link>
+	<script defer src="script.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div id="question-container" class="hide">
+			<div id="header" class="title"><p class="titleText">The Office Trivia</p>
+			<button id="smallButton" class="small-icon one"> X </button>
+			<button id="smallButton" class="small-icon two"> ? </button>
+
+			</div>
+
+			<div id="hud" class="hudContainer"> 	
+				<div id="progressText"> <p> progressText  </p></div>
+				<!-- navigator icons
+				<div id="progress-bar hide"> progressBar </div>
+					<div id="progress-bar-full"> progressBarFull </div>
+					-->
+					
+				<div id="question"> Question </div>
+				<div id="scoreText"><p>Points </p>
+				</div>
+				
+				
+			</div>
+			
+			
+				
+			<div id="answer-buttons" class="btn-grid">
+				<button class="btn"> Answer 1 </button>
+				<button class="btn"> Answer 2 </button>
+				<button class="btn"> Answer 3 </button>
+				<button class="btn"> Answer 4 </button>
+			</div>
+			
+		
+		</div>
+		<div class="controls">
+			<p id="welcome" class="welcomeText">Welcome to The Office Trivia!
+				<span>Press start to play the game!
+				</span>
+			</p>
+			<p id="bye" class="fareWell hide"> Thanks for playing! </p>
+			<p id="answer-status" class="hide"> whahhaht </p>
+			
+			<button id="prev-btn" class="prev-btn btn hide"> Prev </button>
+			<input type="image"  id="start-btn" class="start-btn btn" src = "/zimages/windowsStart.png"> </input>
+			<button id="next-btn" class="next-btn btn hide"> Next </button>
+			<!-- navigator icons
+			<input type="image" src="/images/025-left-arrow-2.png" id="prev-btn" class="prev-btn btn hide"></input>
+			<input type="image" src="/images/017-right-arrow-2.png" id="next-btn" class="prev-btn btn hide"></input>
+		-->
+		</div>
+	</div>
+		
+				
+		
+
+	
+
+</body>
+
+
+</html>
