@@ -108,7 +108,7 @@ button {
 	margin: 15px 15px 14px 14px;
 	gap: 15px;
 	height: fit-content;
-	padding-bottom: 20px;
+
 
 }
 
@@ -141,8 +141,9 @@ button:hover {
 	text-align: center;
 	padding-left: 3px;
 	padding-right: 3px;
-	font-size: 16px;
+	font-size: 17px;
 	font-family: Tahoma;
+	font-weight:bold;
 }
 
 #start-btn {
@@ -174,8 +175,12 @@ button:hover {
 
 #progressText {
 	float:right;
-	margin-top: 5px;
+	
 	padding-left: 5px;
+	padding-left: 8px;
+	padding-top: 5px;
+	font-weight:bold;
+  	font-family:Tahoma;
 }
 
 
@@ -185,12 +190,6 @@ button:hover {
 }
 
 .small-icon {
-	/*
-	outline:none;
-	float:right;
-	width: 20px;
-	
-	*/
 
   float:right;
   width:19px;
@@ -247,8 +246,23 @@ div#header {
 #scoreText {
 	padding-left: 8px;
 	padding-top: 5px;
+	font-weight:bold;
+  	font-family:Tahoma;
 }
 
 #bye {
 	padding-top: 80px;
 }
+
+
+                                                                                                                                                                                                                                                              
+#muteBtn {
+
+   width:20px;
+  height:20px;
+  background:#C0C0C0;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white;
+}
+

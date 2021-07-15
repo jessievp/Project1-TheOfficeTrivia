@@ -7,7 +7,7 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
-
+//const muteUnmuteButton = document.getElementById('muteBtn')
 const welcomePrompt = document.getElementById('welcome')
 
 const progressText = document.getElementById('progressText')
@@ -18,6 +18,8 @@ const scoreText = document.getElementById('scoreText')
 
 
 const finishPlay = document.getElementById('bye')
+
+
 
 // const scoreText = document.getElementById('score')
 
@@ -34,7 +36,7 @@ const MAX_QUESTIONS = 10
 // functions, actions within the game
 
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
-
+//document.getElementById("audio").loop = true;
 
 startBtn.addEventListener('click', startGame)
 reStart.addEventListener('click', restartGame)
@@ -42,6 +44,7 @@ nextButton.addEventListener('click', () => {
 	currentQuestionIndex++
 	nextQuestion()
 })
+
 // prevButton.addEventListener('click', () => {
 // 	currentQuestionIndex--
 // 	previousQuestion()
@@ -54,8 +57,9 @@ nextButton.addEventListener('click', () => {
 		console.log('Started')
 //		below elements will hide when start button is initiated
 		startBtn.classList.add('hide')
-
+		
 		welcomePrompt.classList.add('hide')
+		//muteButton.classList.add('hide')
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
@@ -155,6 +159,7 @@ function selectAnswer (event) {
 		finishPlay.classList.remove('hide')
 		finishPlay.innerHTML  = `<strong> You got a score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
 		questionContainerElement.classList.add('hide')	
+		muteButton.classList.remove('hide')
 
 	 }	
 
@@ -174,16 +179,13 @@ function selectAnswer (event) {
 
 
 
-
-
-
 function restartGame () {
 
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
 	//	currentQuestionIndex = 0
 	//	countRightAnswers = 0
-		scoreText.innerHTML = 0
+		scoreText.innerHTML = `Score: `+ 0
 		questionContainerElement.classList.remove('hide')
 		finishPlay.classList.add('hide')
 		nextQuestion()
@@ -218,7 +220,17 @@ function clearStatusClass(element) {
 }
 
 
-// prevBtn.addEventListener('click', previousBtn)
+// muteUnmuteButton.addEventListener('click', function() {
+// 	if (Audio.muted) {
+// 		Audio.muted = false;
+// 	} else {
+// 		Audio.muted = true;
+// 	}
+// 	
+// }
+
+
+
 
 // useless prompts 
 document.querySelector('#smallButton').addEventListener('click', promptMe);

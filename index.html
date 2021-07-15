@@ -1,4 +1,4 @@
-d
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +11,11 @@ d
 	<link rel="stylesheet" href="style.css">
 	</link>
 	<script defer src="script.js"></script>
+	
 
 </head>
 
-<body>
+<body">
 	<div class="container">
 		<div id="question-container" class="hide">
 			<div id="header" class="title">
@@ -66,6 +67,14 @@ d
 			<input type="image" id="start-btn" class="start-btn btn" src="./zimages/windowsStart.png">
 			</input>
 			<button id="next-btn" class="next-btn btn hide"> Next </button>
+				<div>
+					<audio preload="auto" loop id="audio" class="audio" >
+					<iframe src="./audio/theofficetheme.mp3" allow="autoplay" id="audioFrame" type="audio/mpeg"></iframe>
+					</audio>
+					<input type="image" id="muteBtn" class="mute" src="./zimages/mute.png">
+					
+				</div>
+			
 			<!-- navigator icons
 			<input type="image" src="/images/025-left-arrow-2.png" id="prev-btn" class="prev-btn btn hide"></input>
 			<input type="image" src="/images/017-right-arrow-2.png" id="next-btn" class="prev-btn btn hide"></input>
