@@ -7,7 +7,11 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
-//const muteUnmuteButton = document.getElementById('muteBtn')
+
+const audioTrack = document.getElementById('audio')
+const muteUnmuteButton = document.getElementById('muteBtn')
+// const musicCount = 0
+
 const welcomePrompt = document.getElementById('welcome')
 
 const progressText = document.getElementById('progressText')
@@ -38,6 +42,7 @@ const MAX_QUESTIONS = 10
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
 //document.getElementById("audio").loop = true;
 
+muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
 reStart.addEventListener('click', restartGame)
 nextButton.addEventListener('click', () => {
@@ -51,6 +56,15 @@ nextButton.addEventListener('click', () => {
 // })
 
 
+// function muteUnmute() {
+// 	if(audioTrack.muted === true) {
+// 		audioTrack.muted = false;
+// 		document.getElementById('mutemuteBtn')
+// 	} else {
+// 		audioTrack.muted = true;
+// 	}
+// }
+
 // progressBarFull.style.width = `${(currentQuestionIndex / MAX_QUESTIONS) * 100}%}`;
 
 	function startGame() {
@@ -59,7 +73,7 @@ nextButton.addEventListener('click', () => {
 		startBtn.classList.add('hide')
 		
 		welcomePrompt.classList.add('hide')
-		//muteButton.classList.add('hide')
+		muteUnmuteButton.classList.add('hide')
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
