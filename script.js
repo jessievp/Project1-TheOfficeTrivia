@@ -75,7 +75,7 @@ function playSound () {
 		soundCount = 1;
 		audioTrack.play();
 		audioTrack.volume = 0.12;
-		//audioTrack.loop = true;
+		audioTrack.loop = true;
 	} else {
 		soundCount = 0;
 		audioTrack.pause();
@@ -199,7 +199,7 @@ function selectAnswer (event) {
 
 		reStart.classList.remove('hide')
 		finishPlay.classList.remove('hide')
-		finishPlay.innerHTML  = `<strong> You got a score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
+		finishPlay.innerHTML  = `<strong> You got a total score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
 		questionContainerElement.classList.add('hide')	
 		muteButton.classList.remove('hide')
 

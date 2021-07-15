@@ -71,11 +71,13 @@ h1 {
 
 
 .btn-grid {
+	margin-bottom: 30px;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
-	gap: 20px;
+	gap: 10px;
 	justify-content: center;
 	padding-top: 10px;
+	height: 90px;
 
 }
 
@@ -135,7 +137,7 @@ button:hover {
 
 
 #question {
-	padding-top: 50px;
+	padding-top: 15px;
 	padding-bottom: 15px;
 	font-size: 18px;
 	text-align: center;
@@ -144,11 +146,15 @@ button:hover {
 	font-size: 17px;
 	font-family: Tahoma;
 	font-weight:bold;
+	height: 90px;
 }
 
 #start-btn {
 	height: 30px;
+	margin: 35px;
+
 }
+
 
 .btn.correct {
 	color: blue;
@@ -184,7 +190,7 @@ button:hover {
 
 
 #welcome {
-	padding-top: 50px;
+	padding-top: 40px;
 	width: 320px;
 }
 
@@ -255,13 +261,19 @@ div#header {
 
 
 #playBtn {
-box-sizing: border-box; 
+	margin-top: 45px;
+	margin-right: 5px;
+float: right;
    width:20px;
   height:20px;
   background:#C0C0C0;
   border-width:1px;
   border-color:#FFFFFF #808080 #808080 #FFFFFF;
   box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white;
+}
+
+#next-btn {
+margin-top: -25px;
 }
 
 
