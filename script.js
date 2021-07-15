@@ -8,7 +8,7 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
 
-const audioTrack = document.getElementById('audio')
+
 const muteUnmuteButton = document.getElementById('muteBtn')
 // const musicCount = 0
 
@@ -42,7 +42,7 @@ const MAX_QUESTIONS = 10
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
 //document.getElementById("audio").loop = true;
 
-// muteUnmuteButton.addEventListener('click', muteUnmute, false)
+muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
 reStart.addEventListener('click', restartGame)
 nextButton.addEventListener('click', () => {
@@ -50,20 +50,27 @@ nextButton.addEventListener('click', () => {
 	nextQuestion()
 })
 
+// document.getElementById('audio').play();
+let audioTrack = new Audio('audio/theofficetheme.mp3');
+	audioTrack.play();
+	audioTrack.volume = 0.10;
+	audioTrack.loop = true;
+
+
 // prevButton.addEventListener('click', () => {
 // 	currentQuestionIndex--
 // 	previousQuestion()
 // })
 
 
-// function muteUnmute() {
-// 	if(audioTrack.muted === true) {
-// 		audioTrack.muted = false;
-// 		document.getElementById('mutemuteBtn')
-// 	} else {
-// 		audioTrack.muted = true;
-// 	}
-// }
+function muteUnmute() {
+	if(audioTrack.muted === true) {
+		audioTrack.muted = false;
+		document.getElementById('mutemuteBtn')
+	} else {
+		audioTrack.muted = true;
+	}
+}
 
 // progressBarFull.style.width = `${(currentQuestionIndex / MAX_QUESTIONS) * 100}%}`;
 
