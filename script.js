@@ -7,6 +7,7 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
+const xBtnToMain = document.querySelector('.one')
 
 // const playSound = document.getElementById
 //const muteUnmuteButton = document.getElementById('muteBtn')
@@ -41,9 +42,12 @@ const MAX_QUESTIONS = 10
 
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
 //document.getElementById("audio").loop = true;
+
+
 playTune.addEventListener('click', playSound, 0)
 // muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
+xBtnToMain.addEventListener('click', mainPage)
 reStart.addEventListener('click', restartGame)
 nextButton.addEventListener('click', () => {
 	currentQuestionIndex++
@@ -106,7 +110,7 @@ function playSound () {
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
 		currentQuestionIndex = 0
-		playerScore = 0
+		// playerScore = 0
 		questionContainerElement.classList.remove('hide')
 		nextQuestion()
 //		previousQuestion()
@@ -118,6 +122,12 @@ function playSound () {
 		progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
 }
 
+
+function  mainPage() {
+	startGame()
+	alert (`reshuffling and restarting!`)
+ console.log(mainPage)
+}
 
 
 
@@ -262,6 +272,7 @@ function clearStatusClass(element) {
 }
 
 
+
 // muteUnmuteButton.addEventListener('click', function() {
 // 	if (Audio.muted) {
 // 		Audio.muted = false;
@@ -271,15 +282,10 @@ function clearStatusClass(element) {
 // 	
 // }
 
+let preGame = prompt("Got earphones? Click the sound icon for some muzzzak ;) ")
 
 
-
-// useless prompts 
-document.querySelector('#smallButton').addEventListener('click', promptMe);
-
-function promptMe() {
-    alert("Nothing happens when you click me. :) ");
-}
+// useless prompts
 
 document.querySelector('#smallButton.two').addEventListener('click', info);
 
