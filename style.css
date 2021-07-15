@@ -85,7 +85,7 @@ h1 {
 
 
 .btn-grid {
-	margin-bottom: 30px;
+	margin-bottom: 110px;
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 10px;
@@ -172,7 +172,7 @@ button:hover {
 
 #start-btn {
 
-	margin-bottom: 95px;
+	margin-bottom: 180px;
 	
 
 }
@@ -211,6 +211,9 @@ button:hover {
 	padding-top: 5px;
 	font-weight:bold;
   	font-family:Tahoma;
+	border-style:solid;
+	border-color: black;
+	
 }
 
 
@@ -281,13 +284,15 @@ div#header {
 }
 
 #bye {
-	padding-top: 50px;
-	margin-bottom: 45px;
+	padding-top: 60px;
+	margin-bottom: 20px;
+	font-size: 20px;
 }
 
 
 #playBtn {
-	margin-top: 138px;
+	margin-left: 0px;
+	margin-top: 60px;
 	margin-right: 5px;
 float: right;
    width:20px;
@@ -303,15 +308,15 @@ margin-top: -25px;
 padding-top: 3px;
 }
 
-/*
+
 #gif {
 	
 
-display: block;
-margin-left: auto;
+
+margin-left: 150px;
 margin-right: auto;
 width: 50%;
-margin-top: 80px;
+margin-top: -70px;
 
 }
 
