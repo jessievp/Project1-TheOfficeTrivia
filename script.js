@@ -51,7 +51,7 @@ nextButton.addEventListener('click', () => {
 })
 
 // document.getElementById('audio').play();
-let audioTrack = new Audio('audio/theofficetheme.mp3');
+let audioTrack = new Audio('/audio/theofficetheme.mp3');
 	audioTrack.play();
 	audioTrack.volume = 0.10;
 	audioTrack.loop = true;
@@ -80,7 +80,7 @@ function muteUnmute() {
 		startBtn.classList.add('hide')
 		
 		welcomePrompt.classList.add('hide')
-		muteUnmuteButton.classList.add('hide')
+		// muteUnmuteButton.classList.add('hide')
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
