@@ -54,9 +54,103 @@ nextButton.addEventListener('click', () => {
 	nextQuestion()
 })
 
-//document.getElementById('audio').play();
+//const startingTime = 1;
+//let time = startingTime * 60;
+//
+//const countdownEl = document.getElementById('countdown');
+//
+//setInterval(launchTimer, 1000);
+//
+//function launchTimer () {
+//	const minutes = Math.floor(time / 60);
+//	let seconds = time % 60;
+//	countdownEl.innerHTML = `${minutes}: ${seconds}`;
+//	time--;
+//	
+//	if (startTime < 0)
+//
+//}
+//
 
+//let countDownInterval = null;
+//const timer = document.getElementById('countdown')
+//
+//function startCountDown() {
+//	countDownInterval = setInterval(tick, 1000);
+//}
+//
+//function tick () {
+//	if (typeof countDownInterval.counter === 'undefined')
+//	{
+//		countDownInterval.counter = 0;
+//	} else {
+//		countDownInterval.counter++;
+//	}
+//
+//	if(60<=countDownInterval.counter)
+//	{ stopGame();
+//	}
+//}
+//
+//function stopGame() {
+//	clearInterval(countDownInterval);
+//	finishPlay.innerHTML  = `game over!`
+//}
+//
 
+// 
+// 
+// class Countdown {
+//     constructor() {
+//         this.currentTime = 120;
+//         this.intervalId = null;
+//     }
+// 
+//     start(printCallback, finishCallback) {
+//         this.intervalId = setInterval(() => {
+//             this.currentTime--;
+// 
+//             if (this.currentTime <= 0) {
+//                 this.stop();
+//                 if (finishCallback) {
+//                     finishCallback();
+//                 }
+//             }
+// 
+//             if (printCallback) {
+//                 printCallback();
+//             }
+//         }, 1000);
+//     }
+// 
+// 
+//     getSeconds() {
+//         let numbersec = (this.currentTime % 60);
+//         return ~~numbersec;
+//     }
+// 
+//     computeTwoDigitNumber(value) {
+//         return value.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
+//     }
+// 
+//     stop() {
+//         clearInterval(this.intervalId);
+//     }
+// }
+// 
+// 
+// function printSeconds () {
+// 	const secDecElement = document.getElementById('secDec');
+// 	const secUniElement = document.getElementById('secUni');
+// 	let seconds = game.Countdown.getSeconds();
+// 	secDecElement.innerHTML = game.Countdown.computeTwoDigitNumber(seconds)[0];
+// 	secUniElement.innerHTML = game.Countdown.computeTwoDigitNumber(seconds)[1];
+// }
+// 
+// function printTime() {
+// 	printSeconds;
+// }
+// //document.getElementById('audio').play();
 
 
 

@@ -211,8 +211,8 @@ button:hover {
 	padding-top: 5px;
 	font-weight:bold;
   	font-family:Tahoma;
-	border-style:solid;
-	border-color: black;
+	/*border-style:solid;
+	border-color: black;*/
 	
 }
 
@@ -310,9 +310,6 @@ padding-top: 3px;
 
 
 #gif {
-	
-
-
 margin-left: 150px;
 margin-right: auto;
 width: 50%;
