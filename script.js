@@ -42,7 +42,7 @@ const MAX_QUESTIONS = 10
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
 //document.getElementById("audio").loop = true;
 
-muteUnmuteButton.addEventListener('click', muteUnmute, false)
+// muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
 reStart.addEventListener('click', restartGame)
 nextButton.addEventListener('click', () => {
