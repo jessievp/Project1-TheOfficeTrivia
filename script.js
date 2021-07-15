@@ -22,7 +22,7 @@ const scoreText = document.getElementById('scoreText')
 
 
 const finishPlay = document.getElementById('bye')
-
+const showGif = document.getElementById('gif')
 
 
 // const scoreText = document.getElementById('score')
@@ -105,6 +105,7 @@ function playSound () {
 		startBtn.classList.add('hide')
 	//	muteUnmuteButton.classList.add('hide')
 		welcomePrompt.classList.add('hide')
+		showGif.classList.add('hide')
 		// muteUnmuteButton.classList.add('hide')
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -211,7 +212,8 @@ function selectAnswer (event) {
 		finishPlay.classList.remove('hide')
 		finishPlay.innerHTML  = `<strong> You got a total score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
 		questionContainerElement.classList.add('hide')	
-		muteButton.classList.remove('hide')
+		//muteButton.classList.remove('hide')
+		showGif.classList.remove('hide')
 
 	 }	
 
@@ -240,6 +242,7 @@ function restartGame () {
 		scoreText.innerHTML = `Score: `+ 0
 		questionContainerElement.classList.remove('hide')
 		finishPlay.classList.add('hide')
+	
 		nextQuestion()
 //		previousQuestion()
 
@@ -258,10 +261,8 @@ function setStatusClass (element, correct) {
 	clearStatusClass(element)
 	if (correct) {
 		element.classList.add('correct') 
-
 	} else {
 		element.classList.add('wrong')
-
 	}
 }
 
@@ -282,10 +283,10 @@ function clearStatusClass(element) {
 // 	
 // }
 
+// useless prompts
 let preGame = prompt("Got earphones? Click the sound icon for some muzzzak ;) ")
 
 
-// useless prompts
 
 document.querySelector('#smallButton.two').addEventListener('click', info);
 
@@ -294,14 +295,6 @@ function info() {
 }
 
 
-// multiple choice option
-// const selectAnswerBtn = document.getElementsByClassName('.answerBtn')
-
-// document.querySelectorAll('.answerBtn').forEach(item => {
-// 	item.addEventListener('click', selectAnswer => {
-// 	console.log('Im an answer button')
-// 	})
-// })
 
 
 

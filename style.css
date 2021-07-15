@@ -107,11 +107,15 @@ button {
 */
 
 button {
-  width: 150px;
-      height: 20px;
+  width: 170px;
+      height: 25px;
       display: grid;
        box-shadow: 0.5px 0.5px 0 0.5px black, inset 1px 1px  #85898d,
       inset -1px -1px #85898d;
+      text-align: center;
+      vertical-align: middle;
+      
+
 }
 
 
@@ -121,7 +125,7 @@ button {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 15px 15px 14px 14px;
+margin-bottom: -80px;
 	gap: 15px;
 	height: fit-content;
 
@@ -135,17 +139,20 @@ button {
       display: flex; 
       flex-direction: column;
       align-items: center;
+      font-weight: bolder;
+      vertical-align: middle;
   }
 
 
 
 
 button:hover {
-	      color: #85898d;
+	background-color: #C0C0C0;
 }
 
 .hide {
 	display: none;
+
 }
 
 
@@ -164,34 +171,38 @@ button:hover {
 }
 
 #start-btn {
-	height: 30px;
-	margin: 35px;
+
+	margin-bottom: 95px;
+	
 
 }
+
 
 
 .btn.correct {
 	color: blue;
+	font-weight: bolder;
 }
 
 .btn.wrong {
 	color: red;
+	font-weight: bolder;
 }
-
+/*
 #progress-bar {
 	border: 0.3px solid red;
 	width: 130px;
 	float: left;
-}
+}*/
 
-
+/*
 #progress-bar-full {
 	float: left;
 	height: 100%;
 	background:red;
 	width: 0%;
 	display: inline-block;
-}
+}*/
 
 #progressText {
 	float:right;
@@ -270,12 +281,13 @@ div#header {
 }
 
 #bye {
-	padding-top: 80px;
+	padding-top: 50px;
+	margin-bottom: 45px;
 }
 
 
 #playBtn {
-	margin-top: 45px;
+	margin-top: 138px;
 	margin-right: 5px;
 float: right;
    width:20px;
@@ -288,6 +300,18 @@ float: right;
 
 #next-btn {
 margin-top: -25px;
+padding-top: 3px;
 }
 
+/*
+#gif {
+	
+
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+margin-top: 80px;
+
+}
 
