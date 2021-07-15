@@ -8,15 +8,14 @@ const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
 
-
-const muteUnmuteButton = document.getElementById('muteBtn')
-// const musicCount = 0
+// const playSound = document.getElementById
+//const muteUnmuteButton = document.getElementById('muteBtn')
+const playTune = document.getElementById('playBtn')
 
 const welcomePrompt = document.getElementById('welcome')
 
 const progressText = document.getElementById('progressText')
-// const progressBar = document.getElementById('progress-bar')
-//const progressBarFull = document.getElementById('progress-bar-full')
+
 
 const scoreText = document.getElementById('scoreText') 
 
@@ -33,6 +32,7 @@ let availableQuestions = []
 let questionCounter = 0
 let countRightAnswers = 0
 
+let soundCount = 0;
 
 // const SCORE_POINTS = 100
 const MAX_QUESTIONS = 10
@@ -41,8 +41,8 @@ const MAX_QUESTIONS = 10
 
 // the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
 //document.getElementById("audio").loop = true;
-
-muteUnmuteButton.addEventListener('click', muteUnmute, false)
+playTune.addEventListener('click', playSound, 0)
+// muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
 reStart.addEventListener('click', restartGame)
 nextButton.addEventListener('click', () => {
@@ -50,27 +50,48 @@ nextButton.addEventListener('click', () => {
 	nextQuestion()
 })
 
-// document.getElementById('audio').play();
-let audioTrack = new Audio('/audio/theofficetheme.mp3');
-	audioTrack.play();
-	audioTrack.volume = 0.10;
-	audioTrack.loop = true;
+//document.getElementById('audio').play();
+
+
+
+
+
+	//audioTrack.play();
+	//audioTrack.volume = 0.12;
+	//audioTrack.loop = true;
+	// audioTrack.onclick();
+	//page.onclick = () => playSound()
 
 
 // prevButton.addEventListener('click', () => {
 // 	currentQuestionIndex--
 // 	previousQuestion()
 // })
+let audioTrack = new Audio('./audio/theofficetheme.mp3');
 
-
-function muteUnmute() {
-	if(audioTrack.muted === true) {
-		audioTrack.muted = false;
-		document.getElementById('mutemuteBtn')
+function playSound () {
+	
+	if(soundCount == 0) {
+		soundCount = 1;
+		audioTrack.play();
+		audioTrack.volume = 0.12;
+		//audioTrack.loop = true;
 	} else {
-		audioTrack.muted = true;
+		soundCount = 0;
+		audioTrack.pause();
 	}
 }
+
+
+//function muteUnmute() {
+//	if(audioTrack.muted === true) {
+//		audioTrack.muted = false;
+//		document.getElementById('mutemuteBtn')
+//	} else {
+//		audioTrack.muted = true;
+//	}
+//}
+
 
 // progressBarFull.style.width = `${(currentQuestionIndex / MAX_QUESTIONS) * 100}%}`;
 
@@ -78,7 +99,7 @@ function muteUnmute() {
 		console.log('Started')
 //		below elements will hide when start button is initiated
 		startBtn.classList.add('hide')
-		
+	//	muteUnmuteButton.classList.add('hide')
 		welcomePrompt.classList.add('hide')
 		// muteUnmuteButton.classList.add('hide')
 	// to make questions completely random formula -.5
