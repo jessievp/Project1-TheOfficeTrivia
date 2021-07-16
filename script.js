@@ -1,51 +1,66 @@
+//buttons
 const startBtn = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
-// const prevButton = document.getElementById('prev-btn')
 const reStart = document.getElementById('start-btn')
+const xBtnToMain = document.querySelector('.one')
 
+//elements within HTML
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const answerStatus = document.getElementById('answer-status')
-const xBtnToMain = document.querySelector('.one')
 
-// const playSound = document.getElementById
-//const muteUnmuteButton = document.getElementById('muteBtn')
-const playTune = document.getElementById('playBtn')
-
-const welcomePrompt = document.getElementById('welcome')
-
+//hud 
 const progressText = document.getElementById('progressText')
-
-
 const scoreText = document.getElementById('scoreText') 
 
-
+//game effects, start and completion 
+const playTune = document.getElementById('playBtn')
+const welcomePrompt = document.getElementById('welcome')
 const finishPlay = document.getElementById('bye')
 const showGif = document.getElementById('gif')
 
+//failed last minute attempt for a countdown timer :( 
+//leaving it here as I want to keep on working on it
+//	const timesup = document.getElementById('timesup')
+//	const timeLeftDisplay = document.getElementById('countdown')
+//	let timeLeft = 10
+//
+//	function countDown() {
+//		setInterval(function() {
+//		if (timeLeft <= 0) {
+//			clearInterval(timeLeft = 0)
+//			timesup.innerText = "Thanks for playing. Time is up!"
+//			
+//			questionContainerElement.classList.add('hide')
+//			nextButton.classList.add('hide')
+//			startBtn.classList.remove('hide')
+//					
+//			
+//		}
+//		timeLeftDisplay.innerHTML = timeLeft
+//		timeLeft -=1
+//		}, 1000)
+//
+//
+//	}
 
-// const scoreText = document.getElementById('score')
+//	startBtn.addEventListener('click', countDown)
+
 
 let shuffledQuestions, currentQuestionIndex
 // let acceptingAnswers = true
-let availableQuestions = []
+
 let questionCounter = 0
 let countRightAnswers = 0
+let MAX_QUESTIONS = 10
 
-let soundCount = 0;
 
-// const SCORE_POINTS = 100
-const MAX_QUESTIONS = 10
 
-// functions, actions within the game
 
-// the startGame function initializes/launches the game, expected outcome: it should disappear when the trivia starts
-//document.getElementById("audio").loop = true;
 
 
 playTune.addEventListener('click', playSound, 0)
-// muteUnmuteButton.addEventListener('click', muteUnmute, false)
 startBtn.addEventListener('click', startGame)
 xBtnToMain.addEventListener('click', mainPage)
 reStart.addEventListener('click', restartGame)
@@ -54,117 +69,8 @@ nextButton.addEventListener('click', () => {
 	nextQuestion()
 })
 
-//const startingTime = 1;
-//let time = startingTime * 60;
-//
-//const countdownEl = document.getElementById('countdown');
-//
-//setInterval(launchTimer, 1000);
-//
-//function launchTimer () {
-//	const minutes = Math.floor(time / 60);
-//	let seconds = time % 60;
-//	countdownEl.innerHTML = `${minutes}: ${seconds}`;
-//	time--;
-//	
-//	if (startTime < 0)
-//
-//}
-//
-
-//let countDownInterval = null;
-//const timer = document.getElementById('countdown')
-//
-//function startCountDown() {
-//	countDownInterval = setInterval(tick, 1000);
-//}
-//
-//function tick () {
-//	if (typeof countDownInterval.counter === 'undefined')
-//	{
-//		countDownInterval.counter = 0;
-//	} else {
-//		countDownInterval.counter++;
-//	}
-//
-//	if(60<=countDownInterval.counter)
-//	{ stopGame();
-//	}
-//}
-//
-//function stopGame() {
-//	clearInterval(countDownInterval);
-//	finishPlay.innerHTML  = `game over!`
-//}
-//
-
-// 
-// 
-// class Countdown {
-//     constructor() {
-//         this.currentTime = 120;
-//         this.intervalId = null;
-//     }
-// 
-//     start(printCallback, finishCallback) {
-//         this.intervalId = setInterval(() => {
-//             this.currentTime--;
-// 
-//             if (this.currentTime <= 0) {
-//                 this.stop();
-//                 if (finishCallback) {
-//                     finishCallback();
-//                 }
-//             }
-// 
-//             if (printCallback) {
-//                 printCallback();
-//             }
-//         }, 1000);
-//     }
-// 
-// 
-//     getSeconds() {
-//         let numbersec = (this.currentTime % 60);
-//         return ~~numbersec;
-//     }
-// 
-//     computeTwoDigitNumber(value) {
-//         return value.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false })
-//     }
-// 
-//     stop() {
-//         clearInterval(this.intervalId);
-//     }
-// }
-// 
-// 
-// function printSeconds () {
-// 	const secDecElement = document.getElementById('secDec');
-// 	const secUniElement = document.getElementById('secUni');
-// 	let seconds = game.Countdown.getSeconds();
-// 	secDecElement.innerHTML = game.Countdown.computeTwoDigitNumber(seconds)[0];
-// 	secUniElement.innerHTML = game.Countdown.computeTwoDigitNumber(seconds)[1];
-// }
-// 
-// function printTime() {
-// 	printSeconds;
-// }
-// //document.getElementById('audio').play();
-
-
-
-	//audioTrack.play();
-	//audioTrack.volume = 0.12;
-	//audioTrack.loop = true;
-	// audioTrack.onclick();
-	//page.onclick = () => playSound()
-
-
-// prevButton.addEventListener('click', () => {
-// 	currentQuestionIndex--
-// 	previousQuestion()
-// })
+// audio background
+let soundCount = 0;
 let audioTrack = new Audio('./audio/theofficetheme.mp3');
 
 function playSound () {
@@ -180,7 +86,7 @@ function playSound () {
 	}
 }
 
-
+// this works, but wanted to have a  cleaner page with just one button for audio control
 //function muteUnmute() {
 //	if(audioTrack.muted === true) {
 //		audioTrack.muted = false;
@@ -190,63 +96,38 @@ function playSound () {
 //	}
 //}
 
-
-// progressBarFull.style.width = `${(currentQuestionIndex / MAX_QUESTIONS) * 100}%}`;
-
 	function startGame() {
 		console.log('Started')
-//		below elements will hide when start button is initiated
+	//	below elements will hide when start button is initiated
 		startBtn.classList.add('hide')
-	//	muteUnmuteButton.classList.add('hide')
+
 		welcomePrompt.classList.add('hide')
 		showGif.classList.add('hide')
-		// muteUnmuteButton.classList.add('hide')
+	
 	// to make questions completely random formula -.5
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
 	// starts at 0	
 		currentQuestionIndex = 0
-		// playerScore = 0
+	// hides this question box when welcome page is initiated
 		questionContainerElement.classList.remove('hide')
 		nextQuestion()
-//		previousQuestion()
-
-//		previousQuestionIndex = 0
-//		questionContainerElement.classList.remove('hide')
-
 		questionCounter++ 
 		progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
 }
 
-
+// x button to reshuffle and restart the game
 function  mainPage() {
-	startGame()
-	alert (`reshuffling and restarting!`)
- console.log(mainPage)
+	startGame()	
+		alert (`reshuffling and restarting!`)
+ 		console.log(mainPage)
 }
-
-
-
-
-// previous and next navigators and shows questions
-// const nextBtn = document.getElementById('next-btn')
-
-// nextBtn.addEventListener('click', nextQuestion)
 
  function nextQuestion () {
  	resetState()
  	showQuestion(shuffledQuestions[currentQuestionIndex])
-
-//	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-//		return "game is over!";
-
 	questionCounter++
 	progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
-
  }
-
-//  function previousQuestion () {
-// 	showQuestion(shuffledQuestions[currentQuestionIndex])
-// }
 
 function showQuestion(question) {
 	questionElement.innerText = question.question
@@ -257,14 +138,10 @@ function showQuestion(question) {
 
 	if (answer.correct) {
 		button.dataset.correct = answer.correct 
-	//	playerScore += 1;
 		}
 		button.addEventListener('click', selectAnswer)
 		answerButtonsElement.appendChild(button)
-		// progressBar.innerText = `Question ${currentQuestionIndex} / ${MAX_QUESTIONS}`;
-
 	})
-
 }
 
 
@@ -276,15 +153,6 @@ function showQuestion(question) {
  	}
  }
 
-
- // function finishGame() {
-// 	 clearStatusClass (document.body)
-// 	 if (shuffledQuestions.length = MAX_QUESTIONS ) {
-// 	     
-// 	     finishPlay.innerHTML = "Thank you!"
-// 	     finishPlay.classList.remove('hide')
-// 	 }
- // }
 
 function selectAnswer (event) {
 	const selectedButton = event.target
@@ -298,15 +166,13 @@ function selectAnswer (event) {
 	 if (shuffledQuestions.length > currentQuestionIndex +1) {
 	 	nextButton.classList.remove('hide')
 
-
 	} else {
-	 	/*startBtn.innerHTML = `<strong> PLAY AGAIN </strong>` */
-
+	 
+// questions were all presented. game over. this page loops to start the game again.
 		reStart.classList.remove('hide')
 		finishPlay.classList.remove('hide')
 		finishPlay.innerHTML  = `<strong> You got a total score of ` + `${countRightAnswers} !!` + ` Click Start to play again!</strong>`
-		questionContainerElement.classList.add('hide')	
-		//muteButton.classList.remove('hide')
+		questionContainerElement.classList.add('hide')		
 		showGif.classList.remove('hide')
 
 	 }	
@@ -319,34 +185,20 @@ function selectAnswer (event) {
 
 	}
 
-//	if (scoreText > 1) {
-//		progressBar.innerHTML = "what a nerd"
-//	}
-
 }
-
 
 
 function restartGame () {
 
 		shuffledQuestions = questions.sort(() => Math.random() - .5)
-	// starts at 0	
-	//	currentQuestionIndex = 0
-	//	countRightAnswers = 0
 		scoreText.innerHTML = `Score: `+ 0
 		questionContainerElement.classList.remove('hide')
 		finishPlay.classList.add('hide')
-	
-		nextQuestion()
-//		previousQuestion()
 
-//		previousQuestionIndex = 0
-//		questionContainerElement.classList.remove('hide')
+		nextQuestion()
 
 		questionCounter++ 
 		progressText.innerText = `${currentQuestionIndex + 1}/${MAX_QUESTIONS}`;
-
-
 
 }
 
@@ -368,29 +220,18 @@ function clearStatusClass(element) {
 
 
 
-// muteUnmuteButton.addEventListener('click', function() {
-// 	if (Audio.muted) {
-// 		Audio.muted = false;
-// 	} else {
-// 		Audio.muted = true;
-// 	}
-// 	
-// }
-
 // useless prompts
-let preGame = prompt("Got earphones? Click the sound icon for some muzzzak ;) ")
+let preGame = prompt("click the sound icon ;) ")
 
-
-
+// info button about the trivia theme
 document.querySelector('#smallButton.two').addEventListener('click', info);
-
 function info() {
     alert("The Office is an American mockumentary sitcom which aired from March 25, 2005 to May 16, 2013 lasting 9 seasons. It was the most-streamed show of 2020. :) ");
 }
 
 
 
-
+// trivia questions
 
 let  questions = [
 {	question: "In S1E1: Who started their first day at Dunder Mifflin Scranton?",
